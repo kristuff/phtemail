@@ -125,12 +125,12 @@ abstract class HtmlBuilder
   
     /** 
      * Define the 'body' font size in pixels
-     * Default is 14
+     * Default is 15
      * 
      * @access protected
      * @var $fontSize
      */
-    protected $fontSize = 14;
+    protected $fontSize = 15;
     
     /** 
      * Defines the 'body' line height

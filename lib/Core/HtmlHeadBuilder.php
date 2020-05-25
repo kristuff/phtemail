@@ -85,12 +85,12 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
         $html .= '    h1, h2, h3, h4, h5, h6 {color:#5F5F5F; font-weight:normal; font-family:'. $this->emailBodyFont .';'.PHP_EOL;
         $html .= '     font-size:20px; line-height:125%; text-align:Left; letter-spacing:normal;'.PHP_EOL;
-        $html .= '     margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;'.PHP_EOL;
-        $html .= '     padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}'.PHP_EOL;
+        $html .= '     margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;'.PHP_EOL;
+        $html .= '     padding-top:0;padding-bottom:10px;padding-left:0;padding-right:0;}'.PHP_EOL;
         // custom    
-        $html .= '    p {margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;';
+        $html .= '    p {margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;';
         $html .=        'padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}'.PHP_EOL;
-        $html .= '    p + p {margin-top:10px;}'.PHP_EOL;
+        $html .= '    p + p {padding-top:10px;}'.PHP_EOL;
         $html .= PHP_EOL;
 
         // -- client specific styles -------------------------------------------
@@ -144,7 +144,6 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
         $html .= PHP_EOL;
 
         //todo
-
         $html .= $this->getCssComment('--- FRAMEWORK STYLES ---', '      ');
         $html .= '      table[id="emailHeader"],'.PHP_EOL;
         $html .= '      table[id="emailBody"],'.PHP_EOL;

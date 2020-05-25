@@ -106,4 +106,24 @@ abstract class HtmlElement extends StylizedElement
             }
         }
     }
+
+     
+    // todo
+    protected function getInlineStyles()
+    {
+        $stylesCollection = [];
+        foreach ($this->styles as $key => $value){
+           $stylesCollection[] = $key. ':' . $value;
+        }
+        
+        // check for mandatory styles
+        foreach ($this->mandatoryStyles as $style){
+            if (!array_key_exists($style, $this->styles)){
+                $stylesCollection[] = $style . ':' . $this->getEffectiveStyle($style); 
+            }
+        }
+
+        return !empty($stylesCollection) ? ' style="'. implode(';', $stylesCollection) .'"' : '';
+    }
+
 }

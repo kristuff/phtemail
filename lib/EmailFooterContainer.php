@@ -50,6 +50,6 @@ class EmailFooterContainer extends HtmlBuilderContainer
      */
     public function getHtml(string $indent)
     {
-        return $this->getHtmlStructure($indent, 'EMAIL FOOTER', 'emailFooter', $this->getBuilder()->backgroundColor(), 30);
+        return $this->getHtmlStructure($indent, 'EMAIL FOOTER', 'emailFooter', $this->getBuilder()->backgroundColor());
     }
 }

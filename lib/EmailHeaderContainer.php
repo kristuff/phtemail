@@ -38,6 +38,6 @@ class EmailHeaderContainer extends HtmlBuilderContainer
      */
     public function getHtml(string $indent)
     {
-        return $this->getHtmlStructure($indent, 'EMAIL HEADER', 'emailHeader', $this->getBuilder()->backgroundColor(), 5);
+        return $this->getHtmlStructure($indent, 'EMAIL HEADER', 'emailHeader', $this->getBuilder()->backgroundColor());
     }
 }

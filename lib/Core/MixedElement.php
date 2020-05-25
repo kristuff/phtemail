@@ -62,6 +62,6 @@ class MixedElement extends \Kristuff\Phtemail\Core\HtmlElement
      */
     public function getHtml(string $indent = '')
     {
-        return $indent . '<' . $this->tag . $this->getElementStyles() .'>' . $this->content. '</' . $this->tag  . '>';
+        return $indent . '<' . $this->tag . $this->getInlineStyles() .'>' . $this->content. '</' . $this->tag  . '>';
     }
 }

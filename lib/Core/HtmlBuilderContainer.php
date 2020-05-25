@@ -52,12 +52,12 @@ abstract class HtmlBuilderContainer extends HtmlContainerElement
      * @access public
      * @param string        $indent                 The indendation to start with
      * @param string        $partName               The part name: EMAIL BODY, FOOTER, or HEADER 
-     * @param string        $backgroundColor        The backround color, 
-     * @param mixed        [$cellSpacing]           cell spacing for content part. Default is 0 
+     * @param string        $id                     The section id 
+     * @param string        $backgroundColor        The background color 
      * 
      * @return string   The html string content
      */
-    protected function getHtmlStructure(string $indent, string $partName, string $id, string $backgroundColor, $cellSpacing = 0)
+    protected function getHtmlStructure(string $indent, string $partName, string $id, string $backgroundColor)
     {
         // html result. start with an empty string or a html comment
         $html  = $this->getBuilder()->getHtmlComment($partName . ' //', $indent);

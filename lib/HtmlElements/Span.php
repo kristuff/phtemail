@@ -21,9 +21,9 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
- * Represents a break line, ie <br> 
+ * Represents the <span> html element
  */
-class Paragraph extends \Kristuff\Phtemail\Core\MixedElement
+class Span extends \Kristuff\Phtemail\Core\MixedElement
 {
     /**
      * Constructor
@@ -34,14 +34,6 @@ class Paragraph extends \Kristuff\Phtemail\Core\MixedElement
      */
     public function __construct(string $content = '', array $styles = [])
     {
-        parent::__construct('p', $content, $styles);
-        $this->mandatoryStyles = array(
-            'color',   
-            'font-family',
-            'font-size',
-           // 'font-weight',
-           // 'line-height',
-        );
+        parent::__construct('span', $content, $styles);
     }
-
 }

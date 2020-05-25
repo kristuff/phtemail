@@ -23,7 +23,7 @@ namespace Kristuff\Phtemail\HtmlElements;
 /**
  * Represents a link tag (<a>) in html content
  */
-class Link extends \Kristuff\Phtemail\Core\StylizedElement
+class Link extends \Kristuff\Phtemail\Core\HtmlElement
 {
     /**
      * @access private
@@ -76,7 +76,7 @@ class Link extends \Kristuff\Phtemail\Core\StylizedElement
                     . ' target="_blank"' 
                     . ' href="'. $this->linkHref . '"' 
                     . ' title="'. $this->linkTitle . '"'
-                    . $this->getElementStyles() 
+                    . $this->getInlineStyles() 
                     . '>'. PHP_EOL
                     . $this->content
                     . '</a>'. PHP_EOL;

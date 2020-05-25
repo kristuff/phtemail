@@ -50,6 +50,10 @@ abstract class StylizedElement
     public const COLOR_STATUS_SUCCESS   = '#' ; 
     public const COLOR_STATUS_WARNING   = '#' ; 
     
+
+    protected $mandatoryStyles = array();
+
+
     //todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     protected $knowStyles = array(
         'padding' ,  
@@ -80,17 +84,7 @@ abstract class StylizedElement
             }
         }
     }
-    
-    // todo
-    protected function getElementStyles()
-    {
-        $stylesCollection = [];
-        foreach ($this->styles as $key => $value){
-           $stylesCollection[] = $key. ':' . $value;
-        }
-        return !empty($stylesCollection) ? ' style="'. implode(';', $stylesCollection) .'"' : '';
-    }
-
+   
 
     //todo
     public function setAlign(string $value)
@@ -103,10 +97,12 @@ abstract class StylizedElement
     {
         $this->styles['font'] = $value;
     }
+
     public function setFontSize(string $value)
     {
         $this->styles['font-size'] = $value;
     }
+    
     public function setColor(string $value)
     {
         $this->styles['color'] = HtmlBuilder::validateColor($value);
