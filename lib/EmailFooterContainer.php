@@ -20,13 +20,11 @@
 
 namespace Kristuff\Phtemail;
 
-use Kristuff\Phtemail\Core\HtmlBuilderContainer;
-
 /** 
  * Class EmailFooterContainer
  * The footer container element inside our HtmlEmailBuilder
  */
-class EmailFooterContainer extends HtmlBuilderContainer
+class EmailFooterContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
 {
     /**
      * Constructor
@@ -50,6 +48,11 @@ class EmailFooterContainer extends HtmlBuilderContainer
      */
     public function getHtml(string $indent)
     {
-        return $this->getHtmlStructure($indent, 'EMAIL FOOTER', 'emailFooter', $this->getBuilder()->backgroundColor());
+        // make sure a color is set
+        if (empty($this->styles['color'])){
+            $this->setColor($this->getBuilder()->backsideColor());
+        }
+        
+        return $this->getHtmlStructure($indent, 'EMAIL FOOTER', 'emailFooter', $this->getBuilder()->backsideBackgroundColor());
     }
 }

@@ -98,11 +98,14 @@ abstract class HtmlElement extends StylizedElement
             switch ($key){
                 case 'padding':             return '20';
                 case 'align':               return 'left';
-                case 'font-size':           return '14px';
+                case 'padding-top':         return '0';
+                case 'padding-bottom':      return '0';
+                case 'padding-left':        return '0';
+                case 'padding-right':       return '0';
+                case 'font-size':           return $this->getBuilder()->emailBodyFontSize();
                 case 'font-family':         return $this->getBuilder()->emailBodyFont();
                 case 'color':               return $this->getBuilder()->emailBodyColor();
                 case 'background-color':    return $this->getBuilder()->emailBodyBackground();
-
             }
         }
     }

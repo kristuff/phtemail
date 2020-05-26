@@ -20,13 +20,11 @@
 
 namespace Kristuff\Phtemail;
 
-use Kristuff\Phtemail\Core\HtmlBuilderContainer;
-
 /** 
  * Class EmailBodyContainer
  * The main container element inside our HtmlEmailBuilder
  */
-class EmailBodyContainer extends HtmlBuilderContainer
+class EmailBodyContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
 {
     /** 
      * Gets the HTML 
@@ -49,8 +47,7 @@ class EmailBodyContainer extends HtmlBuilderContainer
 
         // render base elements collection
         foreach ($this->childElements as $element){
-            $html .= PHP_EOL . $element->getHtml($indent . '  ');
-            $html .= PHP_EOL ;
+            $html .= $element->getHtml($indent . '  ') .PHP_EOL ;
         }
 
         $html .= $indent . '</table>'.PHP_EOL;

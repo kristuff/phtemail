@@ -58,6 +58,13 @@ class Link extends \Kristuff\Phtemail\Core\HtmlElement
         $this->linkHref = $href;
         $this->linkTitle = $title;
         $this->setStyles($styles);
+        $this->mandatoryStyles = array(
+            'color',   
+            'font-family',
+            'font-size',
+           // 'font-weight',
+           // 'line-height',
+        );
     }
 
     /** 

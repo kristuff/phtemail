@@ -42,7 +42,7 @@ class Row extends HtmlContainerElement
 
     protected function getRowStyle()
     {
-        return ($this->removePaddingBottom || $this->removePaddingBottom ) ?
+        return ($this->removePaddingTop || $this->removePaddingBottom ) ?
                 'style="'. 
                 ($this->removePaddingTop ? 'padding-top:0;' : '') .
                 ($this->removePaddingBottom ? 'padding-bottom:0;' : '').

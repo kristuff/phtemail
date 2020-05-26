@@ -20,15 +20,12 @@
 
 namespace Kristuff\Phtemail;
 
-use Kristuff\Phtemail\Core\HtmlHeadBuilder;
-use Kristuff\Phtemail\Core\StylizedElement;
-
 /**  
  * Main class to build html email
  * Extends the HtmlHeadBuilder class that extends the HtmlBaseBuilder
  * 
  */
-class HtmlEmailBuilder extends HtmlHeadBuilder
+class HtmlEmailBuilder extends \Kristuff\Phtemail\Core\HtmlHeadBuilder
 {
     /** 
      * The email meta title 
@@ -81,11 +78,19 @@ class HtmlEmailBuilder extends HtmlHeadBuilder
      * 
      * @access public 
      * @param string    $title      The email title in meta
+     * 
      * @return void
      */
     public function setTitle(string $title)
     {
         $this->emailTitle = $title;
+    }
+
+    //todo
+    public function setBacksideDarkTheme()
+    {
+        $this->setBacksideBackgroundColor(self::COLOR_DARKGRAY);
+        $this->setBacksideColor(self::COLOR_MEDIUMGRAY);
     }
 
     /** 
@@ -144,11 +149,11 @@ class HtmlEmailBuilder extends HtmlHeadBuilder
         $html .= '</head>' . PHP_EOL;
 
         // start body (document body, not the email body...), center table
-        $html .= '<body bgcolor="'. $this->mainBackgroundColor  .'" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">'. PHP_EOL;
+        $html .= '<body bgcolor="'. $this->backsideBackgroundColor  .'" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">'. PHP_EOL;
         
         $html .= $this->getHtmlComment('CENTER THE EMAIL //', '  ');
         
-        $html .= '  <center style="background-color:'. $this->mainBackgroundColor  .';">'. PHP_EOL;
+        $html .= '  <center style="background-color:'. $this->backsideBackgroundColor  .';">'. PHP_EOL;
         $html .= '    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;">'. PHP_EOL;
         $html .= '      <tr>'. PHP_EOL;
         $html .= '        <td align="center" valign="top" id="bodyCell">'. PHP_EOL;
@@ -171,6 +176,4 @@ class HtmlEmailBuilder extends HtmlHeadBuilder
         return $html;
     }
     
-  
-
 }

@@ -21,8 +21,8 @@
 namespace Kristuff\Phtemail\Core;
 
 /** 
- * Class HtmlStylyzedElement
- * Abstract base class for all Html email elements that can be stylized
+ * Class StylyzedElement
+ * Abstract base class for Html elements
  * 
  * That class allow to define the following styles:
  *  - Color  
@@ -34,27 +34,11 @@ namespace Kristuff\Phtemail\Core;
  */
 abstract class StylizedElement 
 {
-    /** 
-     * Colors constants
-     *
-     * @access public
-     */
-    public const COLOR_BLUE             = '#2E7BA2' ; 
-    public const COLOR_GREEN            = '#26A85C' ; 
-    public const COLOR_ORANGE           = '#f26522' ; 
-    public const COLOR_RED              = '#' ; 
-    public const COLOR_YELLOW           = '#' ; 
-    public const COLOR_MAGENTA          = '#' ; 
-    public const COLOR_LIGHTGRAY        = '#' ; 
-    public const COLOR_STATUS_ERROR     = '#' ; 
-    public const COLOR_STATUS_SUCCESS   = '#' ; 
-    public const COLOR_STATUS_WARNING   = '#' ; 
     
-
+    //todo
     protected $mandatoryStyles = array();
 
-
-    //todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   //todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     protected $knowStyles = array(
         'padding' ,  
 

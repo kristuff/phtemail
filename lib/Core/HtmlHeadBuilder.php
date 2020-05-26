@@ -72,7 +72,7 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
 
         // -- reset styles ----------------------------------------
         $html .= $this->getCssComment('--- RESET STYLES ---', '    ');
-        $html .= '    html { background-color:'. $this->mainBackgroundColor . '; margin:0; padding:0; }'.PHP_EOL;
+        $html .= '    html { background-color:'. $this->backsideBackgroundColor . '; margin:0; padding:0; }'.PHP_EOL;
         $html .= '    body, #bodyTable, #bodyCell, #bodyCell{height:100% !important; margin:0; padding:0;';
         $html .= '    width:100% !important; font-family:'. $this->emailBodyFont .';}'.PHP_EOL;
         $html .= '    table{border-collapse:collapse;}'.PHP_EOL;
@@ -121,10 +121,10 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
         $html .= '    .linkRemoveBorder{border-bottom:0 !important;}'.PHP_EOL;
         $html .= '    table[class=flexibleContainerCellDivider] {padding-bottom:0 !important;padding-top:0 !important;}'.PHP_EOL;
 
-        $html .= '    body, #bodyTable{background-color:'. $this->mainBackgroundColor       . ';}'.PHP_EOL;
-        $html .= '    #emailHeader{background-color:'    . $this->mainBackgroundColor       . ';}'.PHP_EOL;
+        $html .= '    body, #bodyTable{background-color:'. $this->backsideBackgroundColor       . ';}'.PHP_EOL;
+        $html .= '    #emailHeader{background-color:'    . $this->backsideBackgroundColor       . ';}'.PHP_EOL;
         $html .= '    #emailBody{background-color:'      . $this->emailBodyBackgroundColor  . ';}'.PHP_EOL;
-        $html .= '    #emailFooter{background-color:'    . $this->mainBackgroundColor       . ';}'.PHP_EOL;
+        $html .= '    #emailFooter{background-color:'    . $this->backsideBackgroundColor       . ';}'.PHP_EOL;
         $html .= '    .emailButton{background-color:#3497D9; border-collapse:separate;}'.PHP_EOL;
         $html .= '    .buttonContent{color:#FFFFFF; font-family:Helvetica; font-size:18px; font-weight:200; line-height:100%; padding:15px; text-align:center;}'.PHP_EOL;
         $html .= '    .buttonContent a{color:#FFFFFF; display:block; text-decoration:none!important; border:0!important;}'.PHP_EOL;

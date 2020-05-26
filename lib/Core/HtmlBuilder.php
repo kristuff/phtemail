@@ -47,7 +47,8 @@ abstract class HtmlBuilder
     public const COLOR_YELLOW           = '#' ; 
     public const COLOR_MAGENTA          = '#' ; 
     public const COLOR_LIGHTGRAY        = '#' ; 
-    public const COLOR_MEDIUMGRAY       = '#282828';
+    public const COLOR_MEDIUMGRAY       = '#888888';
+    public const COLOR_MEDIUMDARKGRAY   = '#555555';
     public const COLOR_DARKGRAY         = '#1E1F22';
 
     public const COLOR_STATUS_ERROR     = '#' ; 
@@ -82,12 +83,20 @@ abstract class HtmlBuilder
     protected $emailBodyWidth = 600;
 
     /** 
-     * Defines the main background color, outside the email body
+     * Defines the background color for backside part, outside the email body
      * 
      * @access protected
-     * @var string $mainBackgroundColor
+     * @var string $backsideBackgroundColor
      */
-    protected $mainBackgroundColor = "#ECECEC";
+    protected $backsideBackgroundColor = "#ECECEC";
+
+    /** 
+     * Defines the color for backside part , outside the email body
+     * 
+     * @access protected
+     * @var string $backsideColor
+     */
+    protected $backsideColor = self::COLOR_MEDIUMDARKGRAY;
 
     /** 
      * Defines the main text color for the email body
@@ -95,8 +104,8 @@ abstract class HtmlBuilder
      * @access protected
      * @var $emailBodyColor
      */
-    protected $emailBodyColor = "#4A4A4A";
-
+    protected $emailBodyColor = self::COLOR_DARKGRAY;
+    
      /** 
      * Defines the main text color for the email body
      * 
@@ -227,28 +236,55 @@ abstract class HtmlBuilder
     }    
 
     /** 
-     * Gets the main (ie: html tag) background color.
+     * Sets the backside background color.
      *  
      * @access public 
-     * @return string
-     */
-    public function backgroundColor()
-    {
-        return $this->mainBackgroundColor;
-    }    
-
-    /** 
-     * Sets the main (ie: html tag) background color.
-     *  
-     * @access public 
-     * @param string      $value    The body color
+     * @param string      $value    The hex color string
      * 
      * @return void
      * @throws InvalidArgumentException     if the color is not a valid hex color
      */
-    public function setBackgroundColor(string $value)
+    public function setBacksideBackgroundColor(string $value)
     {
-        $this->mainBackgroundColor = self::validateColor($value);
+        $this->backsideBackgroundColor = self::validateColor($value);
+    }
+
+    /** 
+     * Gets the backside background color.
+     *  
+     * @access public 
+     * 
+     * @return string
+     */
+    public function backsideBackgroundColor()
+    {
+        return $this->backsideBackgroundColor;
+    }
+
+    /** 
+     * Sets the backside color.
+     *  
+     * @access public 
+     * @param string      $value    The hex color string
+     * 
+     * @return void
+     * @throws InvalidArgumentException     if the color is not a valid hex color
+     */
+    public function setBacksideColor(string $value)
+    {
+        $this->backsideColor = self::validateColor($value);
+    }
+
+    /** 
+     * Gets the backside color.
+     *  
+     * @access public 
+     * 
+     * @return string
+     */
+    public function backsideColor()
+    {
+        return $this->backsideColor;
     }
 
     /** 
@@ -302,14 +338,52 @@ abstract class HtmlBuilder
     }
     
     /** 
-     * Gets the email body font
+     * Sets the email body font
      *  
      * @access public 
+     * 
      * @return string
      */
     public function emailBodyFont()
     {
         return $this->emailBodyFont;
+    }
+
+    /** 
+     * Sets the email body font family
+     *  
+     * @access public 
+     * @param string     $value    The body font family
+     * 
+     * @return void
+     */
+    public function setEmailBodyFont(string $value)
+    {
+        $this->emailBodyFont = $value;
+    }
+
+    /** 
+     * Gets the email body font size
+     *  
+     * @access public 
+     * @return string
+     */
+    public function emailBodyFontSize()
+    {
+        return $this->emailBodyFontSize .'px';
+    }
+
+    /** 
+     * Sets the email body font size in pixels
+     *  
+     * @access public 
+     * @param int     $value    The body font size in pixels
+     * 
+     * @return string
+     */
+    public function setEmailBodyFontSize(int $value)
+    {
+        $this->emailBodyFontSize = $value;
     }
 
     /** 
