@@ -125,7 +125,8 @@ class ButtonRow extends Row
                                                    ';font-size:20px;line-height:135%;" ' .
                                                    'href="' . $this->buttonSrc . '" target="_blank">' .
                                                    $this->buttonText .
-                                                  '</a>';
+                                                  '</a>'.PHP_EOL;
+                                                  
         $html .= $indent . '                    </td>'.PHP_EOL;
         $html .= $indent . '                  </tr>'.PHP_EOL;
         $html .= $indent . '                </table>'.PHP_EOL;

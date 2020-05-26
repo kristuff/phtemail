@@ -137,9 +137,9 @@ abstract class HtmlBuilder
      * Default is 15
      * 
      * @access protected
-     * @var $fontSize
+     * @var $emailBodyFontSize
      */
-    protected $fontSize = 15;
+    protected $emailBodyFontSize = 15;
     
     /** 
      * Defines the 'body' line height
