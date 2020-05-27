@@ -38,12 +38,8 @@ abstract class StylizedElement
     //todo
     protected $mandatoryStyles = array();
 
-   //todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     protected $knowStyles = array(
-        'padding' ,  
-
-        'align'  ,     
-
         'color' ,   
         'background-color',
         'font-family',
@@ -69,13 +65,18 @@ abstract class StylizedElement
         }
     }
    
+   // public function setPadding(string $value)
+   // {
+   //     $this->styles['padding'] = $value;
+   // }
+
 
     //todo
-    public function setAlign(string $value)
-    {
-        // todo validate
-        $this->styles['align'] = $value;
-    }
+  //  public function setAlign(string $value)
+  //  {
+  //      // todo validate
+  //      $this->styles['align'] = $value;
+  //  }
 
     public function setFont(string $value)
     {
@@ -97,8 +98,4 @@ abstract class StylizedElement
         $this->styles['background-color'] = HtmlBuilder::validateColor($value);
     }
 
-    public function setPadding(string $value)
-    {
-        $this->styles['padding'] = $value;
-    }
 }

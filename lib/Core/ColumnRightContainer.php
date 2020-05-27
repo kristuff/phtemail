@@ -38,7 +38,7 @@ class ColumnRightContainer extends ColumnLeftContainer
     {
        $html  = $indent . '<td align="right" valign="top" class="flexibleContainerBox">'. PHP_EOL;
        $html .= $indent . '  <table class="flexibleContainerBoxNext" bgcolor="'. $this->getEffectiveStyle('background-color') .
-                                '" border="0" cellpadding="'. $this->getEffectiveStyle('padding') .'" cellspacing="0"' . 
+                                '" border="0" cellpadding="'. $this->cellPadding .'" cellspacing="0"' . 
                                 ($this->columnWidth == 0 ? '' : ' width="' . $this->columnWidth . '"') . 
                                 ' style="max-width:100%;">'.PHP_EOL;
        $html .= $indent . '    <tr>'.PHP_EOL;

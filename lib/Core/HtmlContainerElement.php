@@ -26,6 +26,17 @@ namespace Kristuff\Phtemail\Core;
  */
 abstract class HtmlContainerElement extends HtmlElement
 {
+
+    /** 
+     * Allow to set padding and remove top/bottom padding
+     */
+    use \Kristuff\Phtemail\Core\ContainerPaddingTrait;
+
+    /** 
+     * Allow to set v/h align
+     */
+    use \Kristuff\Phtemail\Core\ContainerAlignTrait;
+
     /** 
      * The content of the email
      * 
@@ -33,34 +44,8 @@ abstract class HtmlContainerElement extends HtmlElement
      * @var array           $childElement
      */
     protected $childElements = array();
-
-    /** 
-     * The vertical alignment
-     * 
-     * @access private
-     * @var string          $verticalAlign
-     */
-    protected $verticalAlign = \Kristuff\Phtemail\HtmlEmailBuilder::V_ALIGN_TOP;
-
-    /** 
-     * The horizontal alignment
-     * 
-     * @access private
-     * @var string          $horizontalAlign
-     */
-    protected $horizontalAlign = \Kristuff\Phtemail\HtmlEmailBuilder::H_ALIGN_LEFT;
-
-    //todo
-    public function setAlign($value)
-    {
-        $this->horizontalAlign = $value;
-    }
-
-    //todo
-    public function setVerticalAlign($value)
-    {
-        $this->verticalAlign = $value;
-    }
+ 
+    
 
     /** 
      * Add an element to the HtmlElement collection

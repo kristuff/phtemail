@@ -73,7 +73,7 @@ class ImageRow extends Row
 
         $html .= $this->getBuilder()->getHtmlComment('FLEXIBLE CONTAINER //', $indent . '          ');
 
-        $html .= $indent . '          <table border="0" "cellspacing="0" cellpadding="' . $this->getEffectiveStyle('padding') . 
+        $html .= $indent . '          <table border="0" "cellspacing="0" cellpadding="' . $this->cellPadding . 
                                         '" bgcolor="'. $this->getEffectiveStyle('background-color').
                                         '" width="'. $this->getBuilder()->emailBodyWidth() . 
                                         '" class="flexibleContainer">'.PHP_EOL;

@@ -78,7 +78,7 @@ abstract class HtmlBuilderContainer extends HtmlContainerElement
 
         $html .= $this->getBuilder()->getHtmlComment('FLEXIBLE CONTAINER //', $indent . '            ');
 
-        $html .= $indent . '            <table border="0" cellpadding="' . $this->getEffectiveStyle('padding') . '" cellspacing="0" width="'. $this->getBuilder()->emailBodyWidth() . '" class="flexibleContainer">'.PHP_EOL;
+        $html .= $indent . '            <table border="0" cellpadding="' . $this->cellPadding . '" cellspacing="0" width="'. $this->getBuilder()->emailBodyWidth() . '" class="flexibleContainer">'.PHP_EOL;
         $html .= $indent . '              <tr>'.PHP_EOL;
         $html .= $indent . '                <td align="center" valign="top" width="'. $this->getBuilder()->emailBodyWidth() . '" class="flexibleContainerCell">'.PHP_EOL;
 

@@ -26,6 +26,13 @@ namespace Kristuff\Phtemail;
  */
 class EmailBodyContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
 {
+
+    //todo
+    public function setDefaultRowPadding(int $value)
+    {
+        $this->cellPadding = $value;
+    }
+
     /** 
      * Gets the HTML 
      *

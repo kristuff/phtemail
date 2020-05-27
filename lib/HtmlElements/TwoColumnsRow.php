@@ -20,16 +20,22 @@
 
 namespace Kristuff\Phtemail\HtmlElements;
 
-use Kristuff\Phtemail\Core\HtmlElement;
 use Kristuff\Phtemail\Core\ColumnLeftContainer;
 use Kristuff\Phtemail\Core\ColumnRightContainer;
+use Kristuff\Phtemail\Core\HtmlElement;
 
 /** 
  * Class TwoColumnsRow
  */
-class TwoColumnsRow extends Row
+class TwoColumnsRow extends HtmlElement
 {
-   /** 
+    /** 
+     * Allow to set padding and remove top/bottom padding
+     */
+    use \Kristuff\Phtemail\Core\ContainerPaddingTrait;
+
+    
+    /** 
      * The first column
      * 
      * @access private
@@ -104,7 +110,7 @@ class TwoColumnsRow extends Row
 
         $html .= $this->getBuilder()->getHtmlComment('FLEXIBLE CONTAINER //', $indent . '          ');
 
-        $html .= $indent . '          <table border="0" "cellspacing="0" cellpadding="' . $this->getEffectiveStyle('padding') . 
+        $html .= $indent . '          <table border="0" "cellspacing="0" cellpadding="'. $this->cellPadding . 
                                         '" bgcolor="'. $this->getEffectiveStyle('background-color').
                                         '" width="'. $this->getBuilder()->emailBodyWidth() . 
                                         '" class="flexibleContainer">'.PHP_EOL;

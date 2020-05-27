@@ -68,7 +68,7 @@ class ColumnLeftContainer extends HtmlContainerElement
     public function getHtml(string $indent)
     {
        $html  = $indent . '<td align="left" valign="top" class="flexibleContainerBox">'. PHP_EOL;
-       $html .= $indent . '  <table border="0" cellpadding="'. $this->getEffectiveStyle('padding') .'" cellspacing="0"' . 
+       $html .= $indent . '  <table border="0" cellpadding="'. $this->cellPadding .'" cellspacing="0"' . 
                                     ($this->columnWidth == 0 ? '' : ' width="' . $this->columnWidth . '"') .
                                    ' bgcolor="'. $this->getEffectiveStyle('background-color') .'"'.  
                                    ' style="max-width:100%;">'.PHP_EOL;

@@ -51,6 +51,7 @@ class ButtonRow extends Row
         $this->styles['button_background'] = '#DA5A20';
         $this->styles['button_color'] =      '#EEEEEE';
         $this->styles['button_padding'] =    '15';
+
     }
 
     // TODO
@@ -95,7 +96,7 @@ class ButtonRow extends Row
 
         $html .= $this->getBuilder()->getHtmlComment('FLEXIBLE CONTAINER //', $indent . '          ');
 
-        $html .= $indent . '          <table border="0" cellpadding="' . $this->getEffectiveStyle('padding') . 
+        $html .= $indent . '          <table border="0" cellpadding="' . $this->cellPadding. 
                                           '" cellspacing="0" width="'. $this->getBuilder()->emailBodyWidth() . 
                                           '" class="flexibleContainer">'.PHP_EOL;
 

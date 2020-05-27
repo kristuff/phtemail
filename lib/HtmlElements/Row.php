@@ -27,28 +27,6 @@ use Kristuff\Phtemail\Core\HtmlContainerElement;
  */
 class Row extends HtmlContainerElement
 {
-    //todo
-    protected $removePaddingTop = false;
-    protected $removePaddingBottom = false;
-
-    public function removePaddingTop()
-    {
-        $this->removePaddingTop = true;
-    }
-    public function removePaddingBottom()
-    {
-        $this->removePaddingBottom = true;
-    }
-
-    protected function getRowStyle()
-    {
-        return ($this->removePaddingTop || $this->removePaddingBottom ) ?
-                'style="'. 
-                ($this->removePaddingTop ? 'padding-top:0;' : '') .
-                ($this->removePaddingBottom ? 'padding-bottom:0;' : '').
-                '"' : '';
-    }
-
     /** 
      * Gets the HTML 
      *
@@ -73,7 +51,7 @@ class Row extends HtmlContainerElement
 
         $html .= $this->getBuilder()->getHtmlComment('FLEXIBLE CONTAINER //', $indent . '          ');
 
-        $html .= $indent . '          <table border="0" "cellspacing="0" cellpadding="' . $this->getEffectiveStyle('padding') . 
+        $html .= $indent . '          <table border="0" "cellspacing="0" cellpadding="' . $this->cellPadding . 
                                         '" bgcolor="'. $this->getEffectiveStyle('background-color').
                                         '" width="'. $this->getBuilder()->emailBodyWidth() . 
                                         '" class="flexibleContainer">'.PHP_EOL;
