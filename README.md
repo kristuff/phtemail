@@ -7,7 +7,6 @@
 - Composer (for install)
 
 # Install
-
 //todo
 
 # Sample
@@ -24,8 +23,16 @@ use Kristuff\Phtemail\HtmlElements;
 $builder = new HtmlEmailBuilder();
 
 //todo
-
 ```
+# Api methods
+
+Method         | Parameters |  Description
+------------   | --------   | --------  
+HtmlEmailBuilder::renderHtmlComments()      | `bool` $value | Sets whether the html comments are rendered or not. Default is `false` 
+HtmlEmailBuilder::renderCssComments()       | `bool` $value | Sets whether the css comments are rendered or not. Default is `false` 
+HtmlEmailBuilder::backsideBackgroundColor() | `string` $value | Sets the backside background color
+HtmlEmailBuilder::getBacksideBackgroundColor() | - | Gets the backside background color
+
 
 # Licence
 MIT
