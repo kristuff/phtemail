@@ -21,6 +21,7 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
+ * Class Heading2
  * Represents the h2 html element
  */
 class Heading2 extends \Kristuff\Phtemail\Core\MixedElement
@@ -30,7 +31,7 @@ class Heading2 extends \Kristuff\Phtemail\Core\MixedElement
      * 
      * @access public
      * @param string    $content        The element content
-     * @param  array    $styles         The inline styles
+     * @param array     $styles         The inline styles
      */
     public function __construct(string $content = '', array $styles = [])
     {

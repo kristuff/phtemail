@@ -26,15 +26,19 @@ namespace Kristuff\Phtemail\Core;
  */
 abstract class HtmlBuilder
 {
-    //todo
-    public const H_ALIGN_LEFT = 'left';
-    public const H_ALIGN_RIGHT = 'right';
+    /** 
+     * Align constants
+     *
+     * @access public
+     */
+    public const H_ALIGN_LEFT   = 'left';
+    public const H_ALIGN_RIGHT  = 'right';
     public const H_ALIGN_CENTER = 'center';
-    public const V_ALIGN_TOP = 'top';
+    public const V_ALIGN_TOP    = 'top';
     public const V_ALIGN_BOTTOM = 'bottom';
     public const V_ALIGN_CENTER = 'middle';
     /** 
-     * Colors constants
+     * Colors constants todo
      *
      * @access public
      */
@@ -43,17 +47,26 @@ abstract class HtmlBuilder
     public const COLOR_BLUE             = '#2E7BA2' ; 
     public const COLOR_GREEN            = '#26A85C' ; 
     public const COLOR_ORANGE           = '#f26522' ; 
-    public const COLOR_RED              = '#' ; 
-    public const COLOR_YELLOW           = '#' ; 
-    public const COLOR_MAGENTA          = '#' ; 
-    public const COLOR_LIGHTGRAY        = '#' ; 
-    public const COLOR_MEDIUMGRAY       = '#888888';
-    public const COLOR_MEDIUMDARKGRAY   = '#555555';
+    public const COLOR_RED              = '#c21a1a' ; 
+    public const COLOR_YELLOW           = '#e4c515' ; 
+    public const COLOR_MAGENTA          = '#b64aa9' ; 
+ 
+    public const COLOR_LIGHTGRAY        = '#cccccc'; 
     public const COLOR_DARKGRAY         = '#1E1F22';
 
-    public const COLOR_STATUS_ERROR     = '#' ; 
-    public const COLOR_STATUS_SUCCESS   = '#' ; 
-    public const COLOR_STATUS_WARNING   = '#' ; 
+    public const COLOR_GRAY_100         = '#eeeeee';
+    public const COLOR_GRAY_200         = '#d7d7dd';
+    public const COLOR_GRAY_300         = '#b3b4b9';
+    public const COLOR_GRAY_400         = '#898a94';
+    public const COLOR_GRAY_500         = '#6b6f75';
+    public const COLOR_GRAY_600         = '#56565c';
+    public const COLOR_GRAY_700         = '#353538';
+    public const COLOR_GRAY_800         = '#1e1f22';
+    public const COLOR_GRAY_900         = '#141416';
+
+    public const COLOR_STATUS_ERROR     = '#c41818' ; 
+    public const COLOR_STATUS_SUCCESS   = '#118a39' ; 
+    public const COLOR_STATUS_WARNING   = '#e79c11' ; 
    
     /** 
      * Gets whether html comments are rendered when calling the calling the HtmlEmailBuilder::getHtml() method. 
@@ -69,7 +82,7 @@ abstract class HtmlBuilder
      * Default is false. 
      *
      * @access protected
-     * @var bool $renderCssComments
+     * @var bool    $renderCssComments
      */
     protected $renderCssComments = false;    
     
@@ -78,7 +91,7 @@ abstract class HtmlBuilder
      * Default is 600
      * 
      * @access protected
-     * @var int $emailBodyWidth
+     * @var int     $emailBodyWidth
      */
     protected $emailBodyWidth = 600;
 
@@ -86,49 +99,49 @@ abstract class HtmlBuilder
      * Defines the background color for backside part, outside the email body
      * 
      * @access protected
-     * @var string $backsideBackgroundColor
+     * @var string  $backsideBackgroundColor
      */
-    protected $backsideBackgroundColor = "#ECECEC";
+    protected $backsideBackgroundColor = self::COLOR_GRAY_100;
 
     /** 
-     * Defines the color for backside part , outside the email body
+     * Defines the color for backside part, outside the email body
      * 
      * @access protected
-     * @var string $backsideColor
+     * @var string  $backsideColor
      */
-    protected $backsideColor = self::COLOR_MEDIUMDARKGRAY;
+    protected $backsideColor = self::COLOR_GRAY_600;
 
     /** 
      * Defines the main text color for the email body
      * 
      * @access protected
-     * @var $emailBodyColor
+     * @var string  $emailBodyColor
      */
-    protected $emailBodyColor = self::COLOR_DARKGRAY;
+    protected $emailBodyColor = self::COLOR_GRAY_600;
     
      /** 
      * Defines the main text color for the email body
      * 
      * @access protected
-     * @var $emailBodyColor
+     * @var string  $emailBodyColor
      */
-    protected $emailheaddingColor = "#7A7A7A";
+    protected $emailheaddingColor = self::COLOR_GRAY_900;
 
      /** 
      * Defines the email body background color
      * Default is #FFFFFF white
      * 
      * @access protected
-     * @var $emailBodyBackgroundColor
+     * @var string  $emailBodyBackgroundColor
      */
-    protected $emailBodyBackgroundColor = "#FFFFFF";
+    protected $emailBodyBackgroundColor = self::COLOR_WHITE;
   
     /** 
      * Defines the primary fonts for our html email
      * Default is system fonts
      * 
      * @access protected
-     * @var $fonts
+     * @var string  $fonts
      */
     protected $emailBodyFont = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
   
@@ -137,7 +150,7 @@ abstract class HtmlBuilder
      * Default is 15
      * 
      * @access protected
-     * @var $emailBodyFontSize
+     * @var int     $emailBodyFontSize
      */
     protected $emailBodyFontSize = 15;
     
@@ -146,7 +159,7 @@ abstract class HtmlBuilder
      * Default is 1.6
      * 
      * @access protected
-     * @var $lineHeight
+     * @var float   $lineHeight
      */
     protected $lineHeight = 1.6;
     
@@ -160,7 +173,7 @@ abstract class HtmlBuilder
      * @param string    $color      The hexadecimal string to validate
      *
      * @return string   A valid hex color without a leading '#' 
-     * @throws InvalidArgumentException   if the color is not a valid hex color
+     * @throws \InvalidArgumentException   if the color is not a valid hex color
      */
     public static function validateColor(string $color)
     {    
@@ -195,7 +208,9 @@ abstract class HtmlBuilder
      *      $builder->renderHtmlComments(true);
      *      $htmlContent =  $builder->getHtml(); 
      * 
+     * @access public
      * @param bool      $value    True or false to render or not comments
+     * 
      * @return void 
      */
     public function renderHtmlComments(bool $value)
@@ -212,7 +227,9 @@ abstract class HtmlBuilder
      *      $builder->renderCssComments(true);
      *      $htmlContent =  $builder->getHtml(); 
      * 
+     * @access public
      * @param bool      $value    True or false to render or not comments
+     * 
      * @return void 
      */
     public function renderCssComments(bool $value)
@@ -242,7 +259,7 @@ abstract class HtmlBuilder
      * @param string      $value    The hex color string
      * 
      * @return void
-     * @throws InvalidArgumentException     if the color is not a valid hex color
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
      */
     public function setBacksideBackgroundColor(string $value)
     {
@@ -268,7 +285,7 @@ abstract class HtmlBuilder
      * @param string      $value    The hex color string
      * 
      * @return void
-     * @throws InvalidArgumentException     if the color is not a valid hex color
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
      */
     public function setBacksideColor(string $value)
     {
@@ -330,7 +347,7 @@ abstract class HtmlBuilder
      * @param string      $value    The body color
      * 
      * @return void
-     * @throws InvalidArgumentException     if the color is not a valid hex color
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
      */
     public function setEmailBodyBackgroundColor(string $value)
     {
@@ -404,7 +421,7 @@ abstract class HtmlBuilder
      * @param string      $value    The body text color
      * 
      * @return void
-     * @throws InvalidArgumentException     if the color is not a valid hex color
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
      */
     public function setEmailBodyColor(string $value)
     {

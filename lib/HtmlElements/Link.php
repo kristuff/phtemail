@@ -21,6 +21,7 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
+ * Class Link
  * Represents a link tag (<a>) in html content
  */
 class Link extends \Kristuff\Phtemail\Core\HtmlElement
@@ -62,7 +63,7 @@ class Link extends \Kristuff\Phtemail\Core\HtmlElement
             'color',   
             'font-family',
             'font-size',
-           // 'font-weight',
+           // 'font-weight', todo
            // 'line-height',
         );
     }

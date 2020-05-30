@@ -23,6 +23,7 @@ namespace Kristuff\Phtemail\HtmlElements;
 use Kristuff\Phtemail\Core\MixedElement;
 
 /**
+ * Class Heading1
  * Represents the h1 html element
  */
 class Heading1 extends \Kristuff\Phtemail\Core\MixedElement

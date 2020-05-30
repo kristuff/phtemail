@@ -23,39 +23,41 @@ namespace Kristuff\Phtemail\HtmlElements;
 use Kristuff\Phtemail\Core\HtmlElement;
 
 /**
- * Represents an image  tag (<img>) in html content
+ * Class image
+ * Represents an image tag (<img>) in html content. Image will take full container width 
+ * in mobile, and respect given width otherwise.  
  */
 class Image extends HtmlElement
 {
     /**
      * @access private
-     * @var string $imageSrc
+     * @var string  $imageSrc
      */
     private $imageSrc = '';
 
     /**
      * @access private
-     * @var string $imageTitle
+     * @var string  $imageTitle
      */
     private $imageTitle = '';
 
     /**
      * @access private
-     * @var string $imageAlt
+     * @var string  $imageAlt
      */
     private $imageAlt = '';
 
     /**
      * @access private
-     * @var int $imageWidth
+     * @var int     $imageWidth
      */
     private $imageWidth = '';
 
-     /**
+    /**
      * @access private
-     * @var int $imageMaxHeight todo type
+     * @var int     $imageMaxHeight
      */
-    private $imageMaxHeight = '';
+    private $imageMaxHeight = null;
 
      /**
      * Constructor
@@ -74,14 +76,21 @@ class Image extends HtmlElement
         $this->imageAlt   = $alt;
     }
 
-    //todo
-    public function setMaxHeight($value)
+    /** 
+     * Sets the image max height 
+     *
+     * @access public
+     * @param int       $value
+     * 
+     * @return void
+     */   
+    public function setMaxHeight(int $value)
     {
         $this->imageMaxHeight = $value;
     }
 
     /** 
-     * Get the HTML 
+     * Gets the HTML 
      *
      * @access public
      * @param string    $indent

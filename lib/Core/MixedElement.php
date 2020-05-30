@@ -26,13 +26,13 @@ namespace Kristuff\Phtemail\Core;
 class MixedElement extends \Kristuff\Phtemail\Core\HtmlElement
 {
     /**
-     * @access private
+     * @access protected
      * @var string $tag
      */
     protected $tag = '';
 
     /**
-     * @access private
+     * @access protected
      * @var string $content
      */
     protected $content = '';

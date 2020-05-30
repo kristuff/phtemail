@@ -21,6 +21,7 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
+ * Class Heading5
  * Represents the h5 html element
  */
 class Heading5 extends \Kristuff\Phtemail\Core\MixedElement

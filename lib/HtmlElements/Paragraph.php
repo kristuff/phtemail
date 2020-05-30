@@ -39,7 +39,7 @@ class Paragraph extends \Kristuff\Phtemail\Core\MixedElement
             'color',   
             'font-family',
             'font-size',
-           // 'font-weight',
+           // 'font-weight', todo
            // 'line-height',
         );
     }

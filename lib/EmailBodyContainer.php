@@ -22,12 +22,19 @@ namespace Kristuff\Phtemail;
 
 /** 
  * Class EmailBodyContainer
- * The main container element inside our HtmlEmailBuilder
+ * The main container element inside the HtmlEmailBuilder
  */
 class EmailBodyContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
 {
-
-    //todo
+    /** 
+     * Sets the default padding for all created row in body
+     * Current default value is 30 pixels
+     *
+     * @access public
+     * @param int       $value      The padding in pixels
+     * 
+     * @return void   
+     */
     public function setDefaultRowPadding(int $value)
     {
         $this->cellPadding = $value;
@@ -52,7 +59,7 @@ class EmailBodyContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
                                 . ' width="'. $this->getBuilder()->emailBodyWidth() . '"'  
                                 . ' border="0" cellpadding="0" cellspacing="0" id="emailBody">' .PHP_EOL;
 
-        // render base elements collection
+        // render child elements collection
         foreach ($this->childElements as $element){
             $html .= $element->getHtml($indent . '  ') .PHP_EOL ;
         }
@@ -65,6 +72,4 @@ class EmailBodyContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
         return $html;
 
     }
-
-    
 }

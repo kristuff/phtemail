@@ -77,8 +77,17 @@ abstract class HtmlElement extends StylizedElement
      */
     abstract public function getHtml(string $indent);
 
-    //todo
-    public function getEffectiveStyle($key)
+    /** 
+     * Gets the effective style for the given key. Style can be set 
+     * at current HtmlElement level, or parent level. If none of them
+     * are set, returns a default value. 
+     *
+     * @access public
+     * @param string    $key        The style name
+     * 
+     * @return string
+     */
+    public function getEffectiveStyle(string $key)
     {
         // first look if key style is defined in this element
         if (array_key_exists($key, $this->styles)){
@@ -96,8 +105,6 @@ abstract class HtmlElement extends StylizedElement
         // get default
         if (in_array($key, $this->knowStyles)){
             switch ($key){
-                case 'padding':             return '20';
-                case 'align':               return 'left';
                 case 'padding-top':         return '0';
                 case 'padding-bottom':      return '0';
                 case 'padding-left':        return '0';
@@ -110,8 +117,16 @@ abstract class HtmlElement extends StylizedElement
         }
     }
 
-     
-    // todo
+    /** 
+     * Gets the inline styles for current element. Styles may be set
+     * explicitly at current HtmlElement level, or part of mandatory 
+     * styles some HtmlElements will force to use. 
+     *
+     * @access public
+     * @param string    $key        The style name
+     * 
+     * @return string
+     */
     protected function getInlineStyles()
     {
         $stylesCollection = [];

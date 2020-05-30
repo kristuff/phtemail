@@ -23,9 +23,11 @@ namespace Kristuff\Phtemail\HtmlElements;
 use Kristuff\Phtemail\Core\HtmlBuilder;
 
 /** 
- * Class ButtonRow
+ * Class RowButton
+ * Represents a row with centered button. Button will take full container width 
+ * in mobile, and normal width otherwise.  
  */
-class ButtonRow extends Row
+class RowButton extends Row
 {
     /**
      * @access private
@@ -42,6 +44,7 @@ class ButtonRow extends Row
     /**
      * Constructor
      * 
+     * @access public
      * @param string    $content    The html content string    
      */
     public function __construct(string $content, string $src = '')
@@ -51,22 +54,44 @@ class ButtonRow extends Row
         $this->styles['button_background'] = '#DA5A20';
         $this->styles['button_color'] =      '#EEEEEE';
         $this->styles['button_padding'] =    '15';
-
     }
 
-    // TODO
+    /** 
+     * Sets the button background color 
+     *
+     * @access public
+     * @param string     $value        
+     * 
+     * @return void
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
+     */
     public function setButtonBackground(string $value)
     {
         $this->styles['button_background'] = HtmlBuilder::validateColor($value);
     }
 
-    // TODO
+    /** 
+     * Sets the button text color 
+     *
+     * @access public
+     * @param string     $value        
+     * 
+     * @return void
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
+     */
     public function setButtonColor(string $value)
     {
         $this->styles['button_color'] = HtmlBuilder::validateColor($value);
     }
 
-     // TODO
+    /** 
+     * Sets the button padding 
+     *
+     * @access public
+     * @param string     $value        The padding in pixels. Value must have the 'px' extension
+     * 
+     * @return void
+     */
     public function setButtonPadding(string $value)
     {
         $this->styles['button_padding'] = $value;

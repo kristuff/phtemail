@@ -42,7 +42,7 @@ class Div extends \Kristuff\Phtemail\Core\HtmlContainerElement
             'padding-bottom',
             'padding-left',
             'padding-right',
-           // 'font-weight',
+           // 'font-weight', todo
            // 'line-height',
         );
 
@@ -60,7 +60,7 @@ class Div extends \Kristuff\Phtemail\Core\HtmlContainerElement
     {
        $html  = $indent . '<div'. $this->getInlineStyles() . '>'. PHP_EOL;
 
-       // render base elements collection
+       // render child elements collection
        foreach ($this->elements() as $element){
            $html .= $element->getHtml($indent . '  '). PHP_EOL ;
        }

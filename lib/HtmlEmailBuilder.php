@@ -86,11 +86,19 @@ class HtmlEmailBuilder extends \Kristuff\Phtemail\Core\HtmlHeadBuilder
         $this->emailTitle = $title;
     }
 
-    //todo
+    /** 
+     * Sets dark backside color and background. This doesn't affect
+     * the default email body color and background  
+     * 
+     * @access public 
+     * @param string    $title      The email title in meta
+     * 
+     * @return void
+     */
     public function setBacksideDarkTheme()
     {
         $this->setBacksideBackgroundColor(self::COLOR_DARKGRAY);
-        $this->setBacksideColor(self::COLOR_MEDIUMGRAY);
+        $this->setBacksideColor(self::COLOR_GRAY_500);
     }
 
     /** 
@@ -158,7 +166,7 @@ class HtmlEmailBuilder extends \Kristuff\Phtemail\Core\HtmlHeadBuilder
         $html .= '      <tr>'. PHP_EOL;
         $html .= '        <td align="center" valign="top" id="bodyCell">'. PHP_EOL;
 
-        // render base elements collection
+        // render child elements collection
         $html .= $this->headerContainer->getHtml('          ');    
         $html .= $this->bodyContainer->getHtml('          ');    
         $html .= $this->footerContainer->getHtml('          ');    

@@ -47,11 +47,11 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
      * Gets html title tag as string
      * 
      * @access protected
-     * @param string  $title      The email meta title
+     * @param string    $title      The email meta title
      *  
      * @return string 
      */
-    protected static function getTitle(string $title)
+    protected function getTitle(string $title)
     {
         return '  <title>' . $title . '</title>'  . PHP_EOL;
     }
@@ -60,7 +60,7 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
      * Gets the html styles as string
      * 
      * @access protected
-     * @param bool  $renderComments      True to render html comments. Default is false. 
+     * @param bool      $renderComments      True to render html comments. Default is false. 
      *  
      * @return string 
      */

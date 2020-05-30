@@ -21,9 +21,10 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
- * 
+ * Class RowDivider
+ * Row divider
  */
-class DividerRow extends Row
+class RowDivider extends Row
 {
     /** 
      * Gets the HTML 

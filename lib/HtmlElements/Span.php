@@ -21,6 +21,7 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
+ * Class Span
  * Represents the <span> html element
  */
 class Span extends \Kristuff\Phtemail\Core\MixedElement

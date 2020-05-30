@@ -22,22 +22,10 @@ namespace Kristuff\Phtemail;
 
 /** 
  * Class EmailFooterContainer
- * The footer container element inside our HtmlEmailBuilder
+ * The top bottom container element inside the HtmlEmailBuilder
  */
 class EmailFooterContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
 {
-    /**
-     * Constructor
-     */
-    public function __construct(HtmlEmailBuilder $parent)
-    {
-        parent::__construct($parent);
-        
-        // define some styles
-
-        //$this->styles->set TODO ();
-    }
-
     /** 
      * Gets the HTML 
      *

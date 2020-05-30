@@ -21,6 +21,7 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
+ * Class Heading6
  * Represents the h6 html element
  */
 class Heading6 extends \Kristuff\Phtemail\Core\MixedElement

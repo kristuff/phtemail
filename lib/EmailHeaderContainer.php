@@ -22,7 +22,7 @@ namespace Kristuff\Phtemail;
 
 /** 
  * Class EmailHeaderContainer
- * The header container element inside our HtmlEmailBuilder
+ * The Top container element inside the HtmlEmailBuilder
  */
 class EmailHeaderContainer extends \Kristuff\Phtemail\Core\HtmlBuilderContainer
 {

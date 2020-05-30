@@ -21,6 +21,7 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
+ * Class Heading4
  * Represents the h4 html element
  */
 class Heading4 extends \Kristuff\Phtemail\Core\MixedElement

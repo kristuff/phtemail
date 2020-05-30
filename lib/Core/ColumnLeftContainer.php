@@ -51,6 +51,8 @@ class ColumnLeftContainer extends HtmlContainerElement
 
     /**
      * Constructor
+     * 
+     * @param HtmlElement   $parent
      */
     public function __construct(HtmlElement $parent)
     {
@@ -75,7 +77,7 @@ class ColumnLeftContainer extends HtmlContainerElement
        $html .= $indent . '    <tr>'.PHP_EOL;
        $html .= $indent . '      <td align="'. $this->horizontalAlign .'" valign="'. $this->verticalAlign .'" class="textContent">'.PHP_EOL;
 
-       // render base elements collection
+       // render child elements collection
        foreach ($this->elements() as $element){
             $html .= $element->getHtml($indent . '        ');
             $html .= PHP_EOL ;

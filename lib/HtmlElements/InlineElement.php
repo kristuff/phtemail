@@ -37,6 +37,7 @@ class InlineElement extends HtmlElement
     /**
      * Constructor
      * 
+     * @access public
      * @param string    $content    The html content string    
      */
     public function __construct(string $content)
@@ -44,7 +45,14 @@ class InlineElement extends HtmlElement
         $this->htmlContent = $content;
     }
     
-    // todo
+    /** 
+     * Gets the HTML 
+     *
+     * @access public
+     * @param string    $indent
+     * 
+     * @return string
+     */
     public function getHtml(string $indent)
     {
         $html  = $this->getBuilder()->getHtmlComment('CUSTOM ELEMENT', $indent);

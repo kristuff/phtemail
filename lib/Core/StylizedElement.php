@@ -34,11 +34,20 @@ namespace Kristuff\Phtemail\Core;
  */
 abstract class StylizedElement 
 {
-    
-    //todo
+    /** 
+     * The mandatory styles list. Html elements with mandarory styles will recieve an inline style for each style.
+     * 
+     * @access private
+     * @var array   $mandatoryStyles
+     */
     protected $mandatoryStyles = array();
 
-    //todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    /** 
+     * The known styles list. 
+     * 
+     * @access private
+     * @var array   $knowStyles
+     */
     protected $knowStyles = array(
         'color' ,   
         'background-color',
@@ -53,9 +62,22 @@ abstract class StylizedElement
         'text-align',  
     );
     
-    //todo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    /** 
+     * The current html element styles
+     * 
+     * @access private
+     * @var array   $styles
+     */
     protected $styles = array();
 
+    /** 
+     * Sets inline styles    
+     *
+     * @access public
+     * @param array     $styles        An indexed array of inline styles=>value    
+     * 
+     * @return void
+     */
     public function setStyles(array $styles = [])
     {
         foreach ($styles as $key => $value){
@@ -64,35 +86,56 @@ abstract class StylizedElement
             }
         }
     }
-   
-   // public function setPadding(string $value)
-   // {
-   //     $this->styles['padding'] = $value;
-   // }
 
-
-    //todo
-  //  public function setAlign(string $value)
-  //  {
-  //      // todo validate
-  //      $this->styles['align'] = $value;
-  //  }
-
+    /** 
+     * Sets the font family
+     *
+     * @access public
+     * @param string     $value        
+     * 
+     * @return void
+     */
     public function setFont(string $value)
     {
         $this->styles['font'] = $value;
     }
 
+    /** 
+     * Sets the font size. 
+     *
+     * @access public
+     * @param string     $value        The font size in pixels. Value must have the 'px' extension
+     * 
+     * @return void
+     */
     public function setFontSize(string $value)
     {
         $this->styles['font-size'] = $value;
     }
     
+    /** 
+     * Sets the text color
+     *
+     * @access public
+     * @param string     $value        
+     * 
+     * @return void
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
+     */
     public function setColor(string $value)
     {
         $this->styles['color'] = HtmlBuilder::validateColor($value);
     }
 
+    /** 
+     * Sets the background color 
+     *
+     * @access public
+     * @param string     $value        
+     * 
+     * @return void
+     * @throws \InvalidArgumentException     if the color is not a valid hex color
+     */
     public function setBackground(string $value)
     {
         $this->styles['background-color'] = HtmlBuilder::validateColor($value);

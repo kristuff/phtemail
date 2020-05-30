@@ -1,16 +1,36 @@
 # phtemail
 > Php Html email builder 
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kristuff/phtemail/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kristuff/phtemail/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/kristuff/phtemail/badges/build.png?b=master)](https://scrutinizer-ci.com/g/kristuff/phtemail/build-status/master)
+[![Latest Stable Version](https://poser.pugx.org/kristuff/phtemail/v/stable)](https://packagist.org/packages/kristuff/phtemail)
+[![License](https://poser.pugx.org/kristuff/phtemail/license)](https://packagist.org/packages/kristuff/phtemail)
+
 Wanting to send html emails from some apps, I have used some times email templates edited by hand, meaning needing to look into boring html table structure from an extisting template, hard code the email content, or place some tags to be replaced later with real content by the code that needs to retreive the template, search replace tags, etc... That's so boring 
 
-`kristuff/Phtemail` lets you create your template **on the fly**. Then, you are free to save it or send it immediately.  
+`Kristuff\Phtemail` lets you create your template **on the fly**. Then, you are free to save it or send it immediately. The library comes with a centered layout, custom html elements for layout and email content, predefined styles, and methods / ways to customize the email as you need. 
 
 # Requirments
 - PHP >= 7.1
 - Composer (for install)
 
 # Install
-//todo
+- Install with composer:
+
+    ```
+    $  composer require kristuff/phtemail
+    ```
+    
+- Or deploy in your project (in `composer.json`):
+
+    ```
+    {
+        ...
+        "require": {
+            "kristuff/phtemail": ">=0.1-stable"
+        }
+    }
+    ```
 
 # Sample
 Basic sample:
@@ -19,35 +39,17 @@ Basic sample:
 <?php
 require_once '../vendor/autoload.php';
 
-use Kristuff\Phtemail\EmailBuilder;
+use Kristuff\Phtemail\HtmlEmailBuilder;
 use Kristuff\Phtemail\HtmlElements;
 
-// Create a new instance an EmailBuilder 
-$builder = new EmailBuilder();
+// Create a new instance an HtmlEmailBuilder 
+$builder = new HtmlEmailBuilder();
 
 //todo
+
+// Get the generated email
+email = $builder->getHtml();
 ```
-# Api methods
-
-Method                                      | Parameters        | Return    |  Description
-----------------------------------------    | --------          | --------  | --------  
-EmailBuilder::renderHtmlComments()          | `bool` $value     | `void`    | Sets whether the html comments are rendered or not. Default is `false` 
-EmailBuilder::renderCssComments()           | `bool` $value     | `void`    | Sets whether the css comments are rendered or not. Default is `false` 
-EmailBuilder::backsideBackgroundColor()     | -                 | `string`  | Gets the backside background color.
-EmailBuilder::SetBacksideBackgroundColor()  | `string` $value   | `void`    | Sets the backside background color. $value must be a valid hex color.
-EmailBuilder::backsideColor()               | -                 | `string`  | Gets the backside text color.
-EmailBuilder::SetBacksideColor()            | `string` $value   | `void`    | Sets the backside text color. $value must be a valid hex color.
-EmailBuilder::emailBodyWidth()              | -                 | `int`     | Gets the email body witdh in pixels.
-EmailBuilder::setEmailBodyWidth()           | `int` $value      | `void`    | Sets the email body witdh in pixels.
-EmailBuilder::emailBodyBackground()         | -                 | `string`  | Gets the email body background color.
-EmailBuilder::setEmailBodyBackgroundColor() | `string` $value   | `void`    | Sets the email body background color. $value must be a valid hex color.
-EmailBuilder::emailBodyFont()               | -                 | `string`  | Gets the email body font family.
-EmailBuilder::setEmailBodyFont()            | `string` $value   | `void`    | Sets the email body font family
-EmailBuilder::emailBodyFontSize()           | -                 | `string`  | Gets the email body font size in pixels.
-EmailBuilder::setEmailBodyFontSize()        | `int` $value      | `void`    | Sets the email body font size in pixels.
-EmailBuilder::emailBodyColor()              | -                 | `string`  | Gets the email body text color. $value must be a valid hex color.
-EmailBuilder::setEmailBodyColor()           | `string` $value   | `void`    | Sets the email body text color.
-
 
 # Licence
 MIT

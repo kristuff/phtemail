@@ -34,7 +34,7 @@ abstract class HtmlBuilderContainer extends HtmlContainerElement
      * The htmlEmailBuilder parent class
      * 
      * @access protected
-     * @var htmlEmailBuilder $parent
+     * @var HtmlEmailBuilder $parent
      */
     protected $parent = null;
 
@@ -88,7 +88,7 @@ abstract class HtmlBuilderContainer extends HtmlContainerElement
         $html .= $indent . '                    <tr>'.PHP_EOL;
         $html .= $indent . '                      <td valign="'. $this->verticalAlign .'" align="'. $this->horizontalAlign .'" bgcolor="'. $backgroundColor . '">'.PHP_EOL;
 
-        // render base elements collection
+        // render child elements collection
         foreach ($this->childElements as $element){
             $html .= $element->getHtml($indent . '                        ');
             $html .= PHP_EOL ;

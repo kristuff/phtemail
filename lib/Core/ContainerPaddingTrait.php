@@ -21,38 +21,78 @@
 namespace Kristuff\Phtemail\Core;
 
 /**
- * Allow removing top and/or bottom padding from a container
+ * Allow to set container padding, removing top and/or bottom padding
  */
 trait ContainerPaddingTrait
 {
    /** 
-    * The cell padding in pixels
-    * Default is 30 pixels
+    * The cell padding in pixels. Default is 30 pixels
     * 
-    * @access private
-    * @var int             $cellPadding
+    * @access protected
+    * @var int      $cellPadding
     */
     protected $cellPadding = 30;
     
-     //todo
-     protected $removePaddingTop = false;
-     protected $removePaddingBottom = false;
+   /** 
+    * True to remove top padding. Default is false  
+    * 
+    * @access protected
+    * @var bool     $removePaddingTop
+    */
+    protected $removePaddingTop = false;
+
+    /** 
+    * True to remove bottom padding. Default is false  
+    * 
+    * @access protected
+    * @var bool     $removePaddingTop
+    */
+    protected $removePaddingBottom = false;
  
-    //todo
+    /** 
+     * Sets the container padding   
+     *
+     * @access public
+     * @param int   $value      The padding in pixels
+     * 
+     * @return void
+     */
     public function setPadding(int $value)
     {
         $this->cellPadding = $value;
     }
 
-     public function removePaddingTop()
+    /** 
+     * Remove container top padding   
+     *
+     * @access public
+     * 
+     * @return void
+     */
+    public function removePaddingTop()
      {
          $this->removePaddingTop = true;
      }
-     public function removePaddingBottom()
+
+    /** 
+     * Remove container bottom padding   
+     *
+     * @access public
+     * 
+     * @return void
+     */
+    public function removePaddingBottom()
      {
          $this->removePaddingBottom = true;
      }
- 
+
+    /** 
+     * Gets html style for tr element when using removePadding   
+     *
+     * @access public
+     * 
+     * @return string   The style string content
+     */
      protected function getRowStyle()
      {
          return ($this->removePaddingTop || $this->removePaddingBottom ) ?

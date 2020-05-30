@@ -41,15 +41,28 @@ trait ContainerAlignTrait
      */
     protected $horizontalAlign = \Kristuff\Phtemail\HtmlEmailBuilder::H_ALIGN_LEFT;
 
-   
-    //todo
-    public function setAlign($value)
+    /** 
+     * Sets the container horizontal alignment   
+     *
+     * @access public
+     * @param string   $value      
+     * 
+     * @return void
+     */
+    public function setAlign(string $value)
     {
         $this->horizontalAlign = $value;
     }
 
-    //todo
-    public function setVerticalAlign($value)
+    /** 
+     * Sets the container vertical alignment   
+     *
+     * @access public
+     * @param string   $value      
+     * 
+     * @return void
+     */
+    public function setVerticalAlign(string $value)
     {
         $this->verticalAlign = $value;
     }

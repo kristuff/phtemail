@@ -23,7 +23,8 @@ namespace Kristuff\Phtemail\HtmlElements;
 use Kristuff\Phtemail\Core\HtmlElement;
 
 /**
- * Represents a break line, ie <br> 
+ * Class BreakLine
+ * Represents the break line html element, ie <br> 
  */
 class BreakLine extends HtmlElement
 {

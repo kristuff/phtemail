@@ -26,7 +26,6 @@ namespace Kristuff\Phtemail\Core;
  */
 abstract class HtmlContainerElement extends HtmlElement
 {
-
     /** 
      * Allow to set padding and remove top/bottom padding
      */
@@ -41,11 +40,9 @@ abstract class HtmlContainerElement extends HtmlElement
      * The content of the email
      * 
      * @access private
-     * @var array           $childElement
+     * @var array   $childElement
      */
     protected $childElements = array();
- 
-    
 
     /** 
      * Add an element to the HtmlElement collection
@@ -72,7 +69,6 @@ abstract class HtmlContainerElement extends HtmlElement
         return $this->childElements;
     }
 
-
     /** 
      * Gets the HTML 
      *
@@ -86,7 +82,7 @@ abstract class HtmlContainerElement extends HtmlElement
         // html result. start with an empty string or a html comment
         $html  = $this->getBuilder()->getHtmlComment('BLOCK', $indent);
      
-        // render base elements collection
+        // render child elements collection
         foreach ($this->elements() as $element){
             $html .= PHP_EOL . $element->getHtml($indent);
         }

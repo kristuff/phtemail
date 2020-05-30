@@ -21,6 +21,7 @@
 namespace Kristuff\Phtemail\HtmlElements;
 
 /**
+ * Class Heading3
  * Represents the h3 html element
  */
 class Heading3 extends \Kristuff\Phtemail\Core\MixedElement

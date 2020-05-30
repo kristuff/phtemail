@@ -24,6 +24,7 @@ use Kristuff\Phtemail\Core\HtmlContainerElement;
 
 /** 
  * Class Row
+ * The main containers inside the email body
  */
 class Row extends HtmlContainerElement
 {
@@ -66,7 +67,7 @@ class Row extends HtmlContainerElement
         $html .= $indent . '                  <tr>'.PHP_EOL;
         $html .= $indent . '                    <td align="'. $this->horizontalAlign .'" valign="'. $this->verticalAlign .'" style="color:'. $this->getEffectiveStyle('color') . ';" bgcolor="'. $this->getEffectiveStyle('background-color') . '">'.PHP_EOL;
 
-        // render base elements collection
+        // render child elements collection
         foreach ($this->childElements as $element){
             $html .= $element->getHtml($indent . '                      '). PHP_EOL;
         }
