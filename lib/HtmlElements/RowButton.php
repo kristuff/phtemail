@@ -139,7 +139,7 @@ class RowButton extends Row
         $html .= $indent . '                  <tr>'.PHP_EOL;
         $html .= $indent . '                    <td align="center" valign="middle" class="buttonContent" cellpadding="0" '.
                                                     'bgcolor="'.$this->getEffectiveStyle('button_background').'"'.
-                                                    'style="'.
+                                                    ' style="'.
                                                     'padding-top:'    . $this->getEffectiveStyle('button_padding'). 'px;'.  
                                                     'padding-bottom:' . $this->getEffectiveStyle('button_padding'). 'px;'.  
                                                     'padding-left:'   . $this->getEffectiveStyle('button_padding'). 'px;'.  
