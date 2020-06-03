@@ -38,8 +38,6 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
         $html .= '  <meta name="viewport" content="width=device-width, initial-scale=1.0">'.PHP_EOL;
         $html .= $this->getHtmlComment('Disable auto telephone linking in iOS', '  ');
         $html .= '  <meta name="format-detection" content="telephone=no" />'.PHP_EOL;
-        
-        // done
         return $html;
     }
 
@@ -60,7 +58,6 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
      * Gets the html styles as string
      * 
      * @access protected
-     * @param bool      $renderComments      True to render html comments. Default is false. 
      *  
      * @return string 
      */
@@ -204,12 +201,12 @@ abstract class HtmlHeadBuilder extends HtmlBuilder
 
     /**
      * Get a formatted CSS comment for given string if $renderCssComments is true,
-     * otherwise an empty string or just a break line
+     * otherwise an empty string or just a break line.
      * 
      * @access public
-     * @param string    $text       The comment text
-     * @param string   [$indent]    The indentation before comment. Default is an empty string
-     * @param bool     [$breakLine] True to add a break line (ie: PHP_EOL) after comment. Default is true
+     * @param string    $text       The comment text.
+     * @param string    $indent     The indentation before comment. Default is an empty string.
+     * @param bool      $breakLine  True to add a break line (ie: PHP_EOL) after comment. Default is true.
      * 
      * @return string   
      */

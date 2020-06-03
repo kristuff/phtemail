@@ -55,7 +55,7 @@ class Image extends HtmlElement
 
     /**
      * @access private
-     * @var int     $imageMaxHeight
+     * @var null|int     $imageMaxHeight
      */
     private $imageMaxHeight = null;
 
