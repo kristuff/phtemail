@@ -14,7 +14,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @version    0.1.0
+ * @version    0.2.0
  * @copyright  2017-2020 Kristuff
  */
 
@@ -139,7 +139,7 @@ class RowButton extends Row
         $html .= $indent . '                  <tr>'.PHP_EOL;
         $html .= $indent . '                    <td align="center" valign="middle" class="buttonContent" cellpadding="0" '.
                                                     'bgcolor="'.$this->getEffectiveStyle('button_background').'"'.
-                                                    'style="'.
+                                                    ' style="'.
                                                     'padding-top:'    . $this->getEffectiveStyle('button_padding'). 'px;'.  
                                                     'padding-bottom:' . $this->getEffectiveStyle('button_padding'). 'px;'.  
                                                     'padding-left:'   . $this->getEffectiveStyle('button_padding'). 'px;'.  

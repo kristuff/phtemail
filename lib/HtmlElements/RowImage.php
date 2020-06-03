@@ -14,7 +14,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @version    0.1.0
+ * @version    0.2.0
  * @copyright  2017-2020 Kristuff
  */
 
@@ -81,7 +81,7 @@ class RowImage extends Row
 
         $html .= $this->getBuilder()->getHtmlComment('FLEXIBLE CONTAINER //', $indent . '          ');
 
-        $html .= $indent . '          <table border="0" "cellspacing="0" cellpadding="' . $this->cellPadding . 
+        $html .= $indent . '          <table border="0" cellspacing="0" cellpadding="' . $this->cellPadding . 
                                         '" bgcolor="'. $this->getEffectiveStyle('background-color').
                                         '" width="'. $this->getBuilder()->emailBodyWidth() . 
                                         '" class="flexibleContainer">'.PHP_EOL;
